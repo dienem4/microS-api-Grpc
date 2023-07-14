@@ -1,0 +1,36 @@
+version: v1
+managed:
+  enabled: true
+plugins:
+  # Ici, vous pouvez définir le plugin, qui générera des stubs dans le langage de votre choix
+  - plugin: buf.build/community/stephenh-ts-proto
+  # Spécifiez le répertoire de sortie, où les stubs .ts seront générés
+    out: ../grpc-nest-api-gateway/src/auth
+  # Spécifiez des options pour les plugins
+    opt:
+      - addGrpcMetadata=true
+      - nestJs=true
+  # Ici, vous pouvez définir le plugin, qui générera des stubs dans le langage de votre choix
+  - plugin: buf.build/community/stephenh-ts-proto
+  # Spécifiez le répertoire de sortie, où les stubs .ts seront générés
+    out: ../grpc-nest-auth-svc/src/auth
+  # Spécifiez des options pour les plugins
+    opt:
+      - addGrpcMetadata=true
+      - nestJs=true
+   # Ici, vous pouvez définir le plugin, qui générera des stubs dans le langage de votre choix
+  - plugin: buf.build/community/stephenh-ts-proto
+  # Spécifiez le répertoire de sortie, où les stubs .ts seront générés
+    out: ../grpc-nest-product-svc/src/product
+  # Spécifiez des options pour les plugins
+    opt:
+      - addGrpcMetadata=true
+      - nestJs=true
+   # Ici, vous pouvez définir le plugin, qui générera des stubs dans le langage de votre choix
+  - plugin: buf.build/community/stephenh-ts-proto
+  # Spécifiez le répertoire de sortie, où les stubs .ts seront générés
+    out: ../grpc-nest-order-svc/src/order/proto
+  # Spécifiez des options pour les plugins
+    opt:
+      - addGrpcMetadata=true
+      - nestJs=true

@@ -1,0 +1,28 @@
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:@localhost:3306/micro_order"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model CreateOrderRequest {
+  id        Int     @id @default(autoincrement())
+  productId Int     @map("productId")
+  quantity  Int     @map("quantity")
+  userId    Int     @map("userId")
+}
+
+model CreateOrderResponse {
+  id     Int      @id @default(autoincrement())
+  status Int      @map("status")
+  error  String   @map("error")
+}
+
+model Order {
+  id        Int     @id @default(autoincrement())
+  productId Int
+  quantity  Int
+  userId    Int
+}
